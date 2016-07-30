@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Button.hpp"
+#include "Buzzer.hpp"
 
 using namespace std;
 
@@ -10,15 +10,9 @@ int main(int argc, char* argv[]) {
 		return 1;
 	}
 	
-	Button btn(0);
-	int i = 0;
+	Buzzer buzz(0);
 	
-	while(1) {
-		if(btn.isPressed()) {
-			cout << i << endl;
-			i++;
-		}
-	}
+	buzz.Buzz(1000);
 	
 	return 0;
 }

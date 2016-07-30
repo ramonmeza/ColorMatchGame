@@ -18,6 +18,10 @@ LED::LED(short numOfPins, std::initializer_list<short> pins, short numOfColors) 
 }
 
 LED::~LED() {
+	// Turn off LEDs
+	Off();
+	delay(10);
+	
 	// Deallocate m_Values
 	delete[] m_Values;
 	
