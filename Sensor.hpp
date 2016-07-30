@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include <initializer_list>
-
 #include <wiringPi.h>
 
 class Sensor {
@@ -16,8 +15,6 @@ protected:
 public:
 	Sensor(short numOfPins = 1, std::initializer_list<short> pins = { 0 });
 	~Sensor();
-	
-	friend std::ostream& operator<<(std::ostream& os, const Sensor& obj);
 };
 
 #endif
