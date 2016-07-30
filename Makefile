@@ -10,8 +10,8 @@ LDLIBS = -lwiringPi -lpthread
 RM = rm -f
 
 # Dependencies
-DEPS = RgbLED.hpp LED.hpp Sensor.hpp
-OBJS = RgbLED.o LED.o Sensor.o 
+DEPS = Sensor.hpp
+OBJS = Sensor.o 
 
 # Target to build
 TARGET = ColorMatchGame
