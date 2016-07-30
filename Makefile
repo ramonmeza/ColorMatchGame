@@ -10,11 +10,11 @@ LDLIBS = -lwiringPi -lpthread
 RM = rm -f
 
 # Dependencies
-DEPS = # .h and .hpp files that are required
-OBJS = # .o files that are to be made
+DEPS = LED.hpp Sensor.hpp
+OBJS = LED.o Sensor.o 
 
 # Target to build
-TARGET = ColorMatchGame # Name of executable (where main() is)
+TARGET = ColorMatchGame
 
 all: $(TARGET)
 
@@ -32,4 +32,4 @@ $(TARGET): $(TARGET).o $(OBJS)
 	
 # make clean
 clean: 
-	$(RM) *~ *.o $(TARGET)
+	$(RM) *~ $(OBJS) *.o $(TARGET) 
