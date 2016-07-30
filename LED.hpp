@@ -6,13 +6,14 @@
 
 class LED : public Sensor {
 private:
-	short value;
+	short m_Value;
 
 protected:
-	bool active;
+	bool m_Active;
 
 public:
 	LED(short pin = 0);
+	LED(int numOfPins, std::initializer_list<short> pins);
 	~LED();
 
 	virtual void On();
