@@ -11,7 +11,7 @@ private:
 	bool 	m_Active;
 
 public:
-	LED(short numOfPins = 1, std::initializer_list<short> pins = { 0 }, short numOfColors = 1);
+	LED(short numOfPins = 1, std::initializer_list<short> pins = { 0 });
 	~LED();
 	
 	void On();

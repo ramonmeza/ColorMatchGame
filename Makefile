@@ -15,8 +15,12 @@ OBJS = Buzzer.o Button.o LED.o Sensor.o
 
 # Target to build
 TARGET = ColorMatchGame
+TEST = TestComponents
 
 all: $(TARGET)
+
+test: $(TEST)
+	sudo ./$(TEST)
 
 # Just compile, don't link
 # g++ -c file.cpp -o output_file.o
@@ -30,6 +34,9 @@ all: $(TARGET)
 $(TARGET): $(TARGET).o $(OBJS)
 	$(CXX) -o $@ $^ $(LDLIBS) $(LDFLAGS)
 	
+$(TEST): $(TEST).o $(OBJS)
+	$(CXX) -o $@ $^ $(LDLIBS) $(LDFLAGS)
+	
 # make clean
 clean: 
-	$(RM) *~ $(OBJS) *.o $(TARGET) 
+	$(RM) *~ $(OBJS) *.o $(TARGET) $(TEST)

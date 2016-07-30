@@ -1,8 +1,8 @@
 #include "LED.hpp"
 
-LED::LED(short numOfPins, std::initializer_list<short> pins, short numOfColors) :
+LED::LED(short numOfPins, std::initializer_list<short> pins) :
 	Sensor(numOfPins, pins),
-	m_Colors(numOfColors),
+	m_Colors(numOfPins),
 	m_Active(false)
 {
 	// Initialize each pin
@@ -13,7 +13,7 @@ LED::LED(short numOfPins, std::initializer_list<short> pins, short numOfColors) 
 	m_Values = new short[m_Colors];
 	
 	// Initialize array of color values
-	for(short i = 0; i < numOfColors; i++)
+	for(short i = 0; i < numOfPins; i++)
 		m_Values[i] = 255;
 }
 
