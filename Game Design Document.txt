@@ -1,0 +1,18 @@
+Press button to start game
+
+	Rgb LED turns on
+	Rgb LED cycles through random colors quickly
+	Rgb LED stops on random color and stays lit for 3 seconds
+	Rgb LED turns off
+	
+	10 Second game loop (counting down):
+		Buzzer quickly beeps like a tick
+		Player has to use analog stick to try to match color on LED
+			(Axes changes color)
+		Player holds it until the end *maybe change this*
+		Timer ends
+		Buzzer Buzzes solid for a second
+	2 tone (Green/Yellow) LED lights either Green for good or Yellow for Bad
+	Buzzer chimes a tune for good or bad results
+	
+Repeat

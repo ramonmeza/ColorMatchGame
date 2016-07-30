@@ -1,0 +1,35 @@
+# C++ compiler
+CXX = g++
+# C++ compiler flags
+CXXFLAGS = -std=c++11 -c -Werror -g
+# Linker flags (like -L)
+LDFLAGS =
+# Libraries to link (usually starts with -l)
+LDLIBS = -lwiringPi -lpthread
+# Remove command
+RM = rm -f
+
+# Dependencies
+DEPS = # .h and .hpp files that are required
+OBJS = # .o files that are to be made
+
+# Target to build
+TARGET = ColorMatchGame # Name of executable (where main() is)
+
+all: $(TARGET)
+
+# Just compile, don't link
+# g++ -c file.cpp -o output_file.o
+%.o: %.cpp $(DEPS)
+	$(CXX) $(CXXFLAGS) $< -o $@
+
+# Just link
+# g++ -o output_file file.o OBJS_NEEDED.o -llibs
+#%: %.o $(OBJS)
+#	$(CXX) -o $@ $^ $(LDFLAGS) $(LDLIBS)
+$(TARGET): $(TARGET).o $(OBJS)
+	$(CXX) -o $@ $^ $(LDLIBS) $(LDFLAGS)
+	
+# make clean
+clean: 
+	$(RM) *~ *.o $(TARGET)
