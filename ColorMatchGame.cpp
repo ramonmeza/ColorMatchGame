@@ -1,5 +1,7 @@
 #include <iostream>
+#include "LED.hpp"
 #include "Buzzer.hpp"
+#include "Button.hpp"
 
 using namespace std;
 
@@ -10,9 +12,30 @@ int main(int argc, char* argv[]) {
 		return 1;
 	}
 	
-	Buzzer buzz(0);
+	// Set up components
+	LED rgb1(3, { 0, 1, 2 }, 3);
+	LED rgb2(3, { 3, 4, 5 }, 3);
+	LED dual(2, { 27, 28 }, 2);
+	Buzzer buzzer(29);
+	Button button(25);
 	
-	buzz.Buzz(1000);
+	// Test components
+	rgb1.Toggle();
+	delay(1000);
+	rgb1.Toggle();
+	rgb2.Toggle();
+	delay(1000);
+	rgb2.Toggle();
+	dual.Toggle();
+	delay(1000);
+	dual.Toggle();
+	buzzer.Buzz(5000);
+	
+	while(button.isPressed() == false) {
+		cout << "Press the button." << endl;
+	}
+	
+	cout << "Everything is all cool." << endl;
 	
 	return 0;
 }

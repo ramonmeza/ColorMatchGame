@@ -1,18 +1,26 @@
-Press button to start game
+Components needed:
+x2 RGB LED
+x1 Dual-Color Common-Cathode LED (Red/Yellow or Red/Green work best)
+x1 Active Buzzer
+x1 Button Switch
 
-	Rgb LED turns on
-	Rgb LED cycles through random colors quickly
-	Rgb LED stops on random color and stays lit for 3 seconds
-	Rgb LED turns off
-	
-	10 Second game loop (counting down):
-		Buzzer quickly beeps like a tick
-		Player has to use analog stick to try to match color on LED
-			(Axes changes color)
-		Player holds it until the end *maybe change this*
-		Timer ends
-		Buzzer Buzzes solid for a second
-	2 tone (Green/Yellow) LED lights either Green for good or Yellow for Bad
-	Buzzer chimes a tune for good or bad results
-	
-Repeat
+Game Description:
+A simple game for Raspberry Pi 3 using the SunFounder Sensor Kit v1.0 for Raspberry Pi.
+Objective of the game is to memorize the color of an LED and press the button when the 
+same color appears again. The faster you match a color, the more points you get.
+
+Game Loop Pseudocode:
+Press the Button Switch to start game
+RGB LED turns on to a random color for 3 seconds and then turns off
+Active Buzzer buzzes to mark the beginning of the round
+	RGB LED starts flickering random colors, progressively slowing down
+	Press the Button Switch to stop the flickering on the RGB LED
+	If the colors match
+		Dual-Color Common-Cathode LED turns on green
+		Points get added to your score
+	If the colors don't match
+		Dual-Color Common-Cathode LED turns on red
+		Active Buzzer buzzes
+		Lives goes down by 1 (out of 3 starting lives)
+After a 10 second round, the buzzer buzzes and you get no points.
+Once no more lives display score and end game (save high scores?)
