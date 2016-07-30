@@ -1,5 +1,5 @@
 #include <iostream>
-#include "LED.hpp"
+#include "Button.hpp"
 
 using namespace std;
 
@@ -10,19 +10,15 @@ int main(int argc, char* argv[]) {
 		return 1;
 	}
 	
-	LED led(2, { 0, 1 }, 2);
+	Button btn(0);
+	int i = 0;
 	
-	led.SetColor({ 255, 0 });
-	led.On();
-	delay(500);
-	led.Off();
-	delay(500);
-	
-	led.SetColor({ 0, 255 });
-	led.Toggle();
-	delay(500);
-	led.Toggle();
-	delay(500);
+	while(1) {
+		if(btn.isPressed()) {
+			cout << i << endl;
+			i++;
+		}
+	}
 	
 	return 0;
 }
