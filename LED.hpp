@@ -19,6 +19,7 @@ public:
 	void Toggle();
 	
 	void SetColor(std::initializer_list<short> colors);
+	short* GetColor() { return m_Values; }
 };
 
 #endif
