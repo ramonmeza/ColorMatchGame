@@ -3,8 +3,6 @@
 ##### [SunFounder Sensor Kit v1.0](https://www.sunfounder.com/learn/category/Sensor-Kit-v1-0-for-Raspberry-Pi.html)
 ###### By Ramon Meza
 
----
-
 ## Overview
 A simple game for Raspberry Pi 3 using the sensors from SunFounder Sensor Kit v1.0 for Raspberry Pi.
 
